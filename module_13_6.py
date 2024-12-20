@@ -67,6 +67,10 @@ async def send_calories(message, state):
     await message.answer(f'Ваша норма калорий:\n {st_1} ккал - для мужчин \n {st_2} ккал - для женщин ')
     await state.finish()
 
+@dp.message_handler()
+async def all_messages(message):
+   await message.answer('Введите команду /start, чтобы начать общение.')
+
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
 
